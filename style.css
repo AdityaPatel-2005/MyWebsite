@@ -54,7 +54,7 @@ body {
     right: 0;
     width: 100%; /* Adjust width to ensure it covers the whole watermark */
     height: 70px; /* Adjust height as needed */
-    background-color: var(--second-bg-color); /* Blends with your footer/background */
+    background-color: black; /* Blends with your footer/background */
     z-index: 0; /* Placed between Spline (-2) and your content (1) */
 }
 
