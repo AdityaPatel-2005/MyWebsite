@@ -185,6 +185,15 @@ section {
     box-shadow: none;
 }
 
+}
+.btn-box a,
+.btn-box a:visited,
+.btn-box a:hover,
+.btn-box a:active {
+    color: (--main-color); /* or any color you prefer */
+    text-decoration: none;
+}
+
 .home-sci {
     position: absolute;
     bottom: 1.5rem;
