@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -431,157 +432,12 @@ section {
 }
 
 
-/* ============================================= */
-/* RESPONSIVE (MOBILE) STYLES           */
-/* ============================================= */
-@media (max-width: 768px) {
-    .header {
-        background: var(--bg-color);
-    }
-    #menu-icon {
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        width: 100%;
-        padding: 1rem 4%;
-        background: var(--second-bg-color);
-        box-shadow: 0 .5rem 1rem rgba(0,0,0, .2);
-        transition: .25s ease;
-    }
-    .navbar.active {
-        left: 0;
-    }
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        text-align: center;
-    }
-    /* --- Home Section --- */
-.home {
-    display: flex; /* Always a flex container */
-    align-items: center;
-    justify-content: space-between; /* Space out content and image by default (desktop) */
-    padding: 0 9%;
-    min-height: 100vh; /* Ensure it takes full viewport height for proper spacing */
-    position: relative; /* Needed for absolute positioning if home-sci was absolute, but we're changing that */
-    z-index: 2; /* Ensures section is above canvas */
-}
-
-.home-content {
-    max-width: 60rem;
-    backdrop-filter: blur(2px);
-    background-color: rgba(0,0,0, .6);
-    border: .3rem solid rgba(255, 255, 255, 0.2);
-    border-radius: 3rem;
-    padding: 20px;
-    order: 0; /* Default order for desktop */
-}
-
-.home-content h1 {
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.home-content h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: var(--main-color);
-}
-
-.home-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 4rem;
-}
-
-.home-img {
-    position: relative;
-    width: 40rem;
-    height: 40rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5rem; /* Space from content on desktop */
-    order: 0; /* Default order for desktop */
-}
-
-.home-img img {
-    width: 90%;
-    border-radius: 50%;
-    border: .2rem solid var(--main-color);
-    box-shadow: 0 0 2rem var(--main-color);
-}
-
-.home-img .circle-spin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border-top: .2rem solid var(--second-bg-color);
-    border-bottom: .2rem solid var(--second-bg-color);
-    border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color);
-    animation: homeSpinner 8s linear infinite;
-}
-
-@keyframes homeSpinner {
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-.home-sci {
-    /* For desktop, it's part of the main flex row, but it's positioned absolutely. */
-    /* If you want it part of the flex flow on desktop, remove 'position: absolute'.
-       Given your current HTML, it sits outside home-content and home-img.
-       To make it flexible, it needs to be a direct child of .home.
-    */
-    position: absolute; /* Keep original desktop positioning */
-    bottom: 4rem;
-    left: 9%; /* Align with home-content on desktop */
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-    order: 0; /* Default order for desktop */
-}
-
-.home-sci a {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    background: transparent;
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-    font-size: 25px;
-    color: var(--main-color);
-    transition: .5s;
-    backdrop-filter: blur(3px);
-}
-
-.home-sci a:hover {
-    background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
-}
 
 /* ============================================= */
 /* RESPONSIVE (MOBILE) STYLES                    */
 /* ============================================= */
 @media (max-width: 768px) {
-    .header {
-        background: var(--bg-color);
-    }
+
     #menu-icon {
         display: block;
     }
@@ -612,8 +468,8 @@ section {
     }
 
     .home-img {
-        width: 35rem;
-        height: 35rem;
+        width: 20rem;
+        height: 20rem;
         margin-top: 0; /* Reset desktop margin */
         margin-bottom: 3rem; /* Space below image before content */
         margin-left: 0; /* Reset desktop margin */
@@ -628,11 +484,14 @@ section {
     }
 
     .home-content h3 {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 3.8rem;
+    }
+    .home-content p {
+        font-size: 1.6rem;
     }
 
     .home-sci {
@@ -640,10 +499,10 @@ section {
         margin-top: auto; /* Pushes it to the bottom of the flex container */
         width: 100%;
         justify-content: center;
-        gap: 1rem;
+        gap: 2rem;
         left: auto; /* Reset desktop positioning */
         bottom: auto; /* Reset desktop positioning */
-        padding-top: 2rem; /* Add space above social icons */
+        padding-bottom: 5rem; /* Add space above social icons */
         order: 3; /* Place social icons last in column flow */
     }
 }
