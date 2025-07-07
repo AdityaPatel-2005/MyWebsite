@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Patel | Portfolio</title>
+    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- The canvas for the background animation -->
     <canvas id="canvas"></canvas>
     
+    <!-- Header section with navigation -->
     <header class="header">
         <a href="#home" class="logo">Aditya.</a>
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -20,29 +23,39 @@
             <a href="#journey">Journey</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <!-- Light/Dark Mode Toggle Switch -->
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-switch-checkbox">
+                    <input type="checkbox" id="theme-switch-checkbox" />
+                    <div class="slider round">
+                        <i class='bx bxs-moon'></i>
+                        <i class='bx bxs-sun'></i>
+                        
+                    </div>
+                </label>
+            </div>
         </nav>
     </header>
 
-   <section class="home" id="home">
-    
-    <div class="home-content">
-        <h1>Hi, I'm Aditya Patel</h1>
-        <h3>Engineering Student</h3>
-        <P>Currently pursuing my B.Tech at <strong style="color:#a792ff">Symbiosis Institute of Technology</strong>, Pune, I thrive at the intersection of practical design, performance engineering, and innovation. With hands-on experience in vehicle systems through Formula Student and real-world applications during my <strong style="color:#a792ff">internship at Suzlon</strong>, I specialize in CAD, simulations, and turning concepts into functional systems. I believe in learning by building—and collaborating to solve real problems.</P>
-    </div>
-    <div class="home-img">
-        <img src="face.jpg" alt="Aditya Patel">
-        <span class="circle-spin"></span>
-    </div>
-    <div class="home-sci">
-        <a href="https://www.linkedin.com/in/ap7592/"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://www.instagram.com/aditya_d._patel"><i class='bx bxl-instagram' ></i></a>
-        <a href="https://github.com/AdityaPatel-2005"><i class='bx bxl-github' ></i></a>
-    </div>
-</section>
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm Aditya Patel</h1>
+            <h3>Engineering Student</h3>
+            <p>Currently pursuing my B.Tech at <strong class="highlight">Symbiosis Institute of Technology</strong>, Pune, I thrive at the intersection of practical design, performance engineering, and innovation. With hands-on experience in vehicle systems through Formula Student and real-world applications during my <strong class="highlight">internship at Suzlon</strong>, I specialize in CAD, simulations, and turning concepts into functional systems. I believe in learning by building—and collaborating to solve real problems.</p>
+        </div>
+        <div class="home-img">
+            <img src="face.jpg" alt="Aditya Patel" onerror="this.onerror=null;">
+            <span class="circle-spin"></span>
+        </div>
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/ap7592/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/aditya_d._patel" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram' ></i></a>
+            <a href="https://github.com/AdityaPatel-2005" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' ></i></a>
+        </div>
+    </section>
 
-
-
+    <!-- Journey Section -->
     <section class="journey" id="journey">
         <h2 class="heading">My <span>Journey</span></h2>
         <div class="journey-row">
@@ -87,129 +100,77 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Skills</span></h2>
         <div class="skills-row">
             <div class="skills-column">
-                
                 <div class="skills-box">
                     <div class="skills-content">
-                        <div class="progress">
-                            <h3>CAD (SolidWorks, Fusion 360) <span>Advanced</span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>CFD (SimScale, Ansys) <span>Novice  </span></h3>
-                            <div class="bar"><span style="width: 35%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>FEA (Ansys) <span>Intermediate  </span></h3>
-                            <div class="bar"><span style="width: 60%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Python (for Engineering) <span>Advanced </span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                         <div class="progress">
-                            <h3>3D Printing <span>Intermediate </span></h3>
-                            <div class="bar"><span style="width: 60%;"></span></div>
-                        </div>
+                        <div class="progress"><h3>CAD (SolidWorks, Fusion 360) <span>Advanced</span></h3><div class="bar"><span style="width: 80%;"></span></div></div>
+                        <div class="progress"><h3>CFD (SimScale, Ansys) <span>Novice</span></h3><div class="bar"><span style="width: 35%;"></span></div></div>
+                        <div class="progress"><h3>FEA (Ansys) <span>Intermediate</span></h3><div class="bar"><span style="width: 60%;"></span></div></div>
+                        <div class="progress"><h3>Python (for Engineering) <span>Advanced</span></h3><div class="bar"><span style="width: 80%;"></span></div></div>
+                         <div class="progress"><h3>3D Printing <span>Intermediate</span></h3><div class="bar"><span style="width: 60%;"></span></div></div>
                     </div>
                 </div>
             </div>
             <div class="skills-column">
-               
                 <div class="skills-box">
                     <div class="skills-content">
-                        <div class="progress">
-                            <h3>Problem Solving <span>Intermediate</span></h3>
-                            <div class="bar"><span style="width: 60%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Adaptability & Curiosity <span>Advanced </span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>                        
-                         <div class="progress">
-                            <h3>Critical Thinking <span>Intermediate</span></h3>
-                            <div class="bar"><span style="width: 60%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Team Collaboration <span>Advanced</span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Project Management <span>Intermediate</span></h3>
-                            <div class="bar"><span style="width: 60%;"></span></div>
-                        </div>
+                        <div class="progress"><h3>Problem Solving <span>Intermediate</span></h3><div class="bar"><span style="width: 60%;"></span></div></div>
+                        <div class="progress"><h3>Adaptability & Curiosity <span>Advanced</span></h3><div class="bar"><span style="width: 80%;"></span></div></div>
+                         <div class="progress"><h3>Critical Thinking <span>Intermediate</span></h3><div class="bar"><span style="width: 60%;"></span></div></div>
+                        <div class="progress"><h3>Team Collaboration <span>Advanced</span></h3><div class="bar"><span style="width: 80%;"></span></div></div>
+                        <div class="progress"><h3>Project Management <span>Intermediate</span></h3><div class="bar"><span style="width: 60%;"></span></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <!-- CONTACT SECTION -->
+    
+    <!-- Projects Section -->
     <section class="projects" id="projects">
         <h2 class="heading">My <span>Projects</span></h2>
-
-        <form action="#">
-
-    <!--PROJECTS HERE-->  
-            <div class="project-card">
-                <img src="project1.gif" alt="Solar Mobile Charger">
-                <div class="project-info">
-                    <h3>Solar Mobile Charger</h3>
-                    <p>Designed and built a portable solar mobile charger with a focus on durability, modularity, and solar efficiency.
-Evolved from a box to a prismatic structure for improved stability and performance.
-Used aluminum bracing, MDF panels, and zip-tie assembly to enable low-tech fabrication and easy repair.
-Achieved lightweight design under 10 kg with optimized solar orientation and thermal resistance.</p>
-                </div>
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="project1.gif" alt="Solar Mobile Charger" onerror="this.onerror=null;">
+            <div class="project-info">
+                <h3>Solar Mobile Charger</h3>
+                <p>Designed and built a portable solar mobile charger with a focus on durability, modularity, and solar efficiency. Evolved from a box to a prismatic structure for improved stability and performance. Used aluminum bracing, MDF panels, and zip-tie assembly to enable low-tech fabrication and easy repair. Achieved lightweight design under 10 kg with optimized solar orientation and thermal resistance.</p>
             </div>
+        </div>
 
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="project2.gif" alt="Wireless Backlit Keyboard">
-                <div class="project-info">
-                    <h3>Wireless Backlit Keyboard</h3>
-                    <p>Designed a custom wireless backlit keyboard, focusing on affordability, ergonomics, and modularity.
-Created a detailed CAD model optimized for ease of assembly and repair using low-cost materials.
-Integrated design features for wireless use and LED backlighting without increasing complexity.
-Served as a concept exploration in combining electronics layout with mechanical design principles.</p>
-                </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="projec2.gif" alt="Wireless Backlit Keyboard" onerror="this.onerror=null;">
+            <div class="project-info">
+                <h3>Wireless Backlit Keyboard</h3>
+                <p>Designed a custom wireless backlit keyboard, focusing on affordability, ergonomics, and modularity. Created a detailed CAD model optimized for ease of assembly and repair using low-cost materials. Integrated design features for wireless use and LED backlighting without increasing complexity. Served as a concept exploration in combining electronics layout with mechanical design principles.</p>
             </div>
-
-
-
-
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="project4.gif" alt="Mini Drone">
-                <div class="project-info">
-                    <h3>Mini Drone</h3>
-                    <p>Designed a compact, lightweight mini quadcopter with a fully 3D-printable frame.
-Focused on structural simplicity, modularity, and ease of assembly for quick prototyping.
-Optimized for small-scale flight testing with minimal material usage and efficient layout.
-Demonstrates skills in 3D modeling, aerodynamics, and integrating mechanical design with electronics.</p>
-                </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+            <img src="projec4.gif" alt="Mini Drone" onerror="this.onerror=null;">
+            <div class="project-info">
+                <h3>Mini Drone</h3>
+                <p>Designed a compact, lightweight mini quadcopter with a fully 3D-printable frame. Focused on structural simplicity, modularity, and ease of assembly for quick prototyping. Optimized for small-scale flight testing with minimal material usage and efficient layout. Demonstrates skills in 3D modeling, aerodynamics, and integrating mechanical design with electronics.</p>
             </div>
-            <!-- Project 5 -->
-            <div class="project-card">
-                <img src="project5.gif" alt="FSAE Rear Wing">
-                <div class="project-info">
-                    <h3>FSAE Rear Wing</h3>
-                    <p>Designed a rear wing for the Formula Student car with a focus on aerodynamic efficiency and structural integrity.
-Optimized airfoil profiles and endplate geometry to maximize downforce while minimizing drag.
-Integrated mounting points into the chassis design to ensure stability under high-speed conditions.
-Balanced performance, manufacturability, and weight to align with overall vehicle dynamics goals.</p>
-                </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+            <img src="project5.gif" alt="FSAE Rear Wing" onerror="this.onerror=null;">
+            <div class="project-info">
+                <h3>FSAE Rear Wing</h3>
+                <p>Designed a rear wing for the Formula Student car with a focus on aerodynamic efficiency and structural integrity. Optimized airfoil profiles and endplate geometry to maximize downforce while minimizing drag. Integrated mounting points into the chassis design to ensure stability under high-speed conditions. Balanced performance, manufacturability, and weight to align with overall vehicle dynamics goals.</p>
             </div>
-
-           
-
-        </form>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
             <p>Copyright © 2024 by Aditya Patel | All Rights Reserved.</p>
@@ -218,140 +179,8 @@ Balanced performance, manufacturability, and weight to align with overall vehicl
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
-
-    <script>
-        // --- Mobile Menu Toggle ---
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
-
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('bx-x');
-            navbar.classList.toggle('active');
-        };
-
-        // --- Active Link Highlighting on Scroll ---
-        let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('header nav a');
-
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
-
-                if (top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-                    });
-                };
-            });
-
-            // --- Sticky Header ---
-            let header = document.querySelector('.header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-
-            // --- Remove Toggle on Link Click (for mobile) ---
-            menuIcon.classList.remove('bx-x');
-            navbar.classList.remove('active');
-        };
-    </script>
-
-    <script>let canvas, ctx, w, h;
-let units, pointer;
-let area = {
-	distance: 20,
-	padding: 30
-}
-
-function init() {
-	canvas = document.querySelector("#canvas");
-	ctx = canvas.getContext("2d");
-
-	resizeReset();
-	animationLoop();
-}
-
-function mousemove(e) {
-	pointer.x = e.x;
-	pointer.y = e.y;
-}
-
-function click(e) {
-	let idxa = area.cols * Math.floor((e.y - area.padding) / area.distance);
-	let idxb = Math.ceil((e.x - area.padding) / area.distance);
-	let targetIdx = idxa + idxb - 1;
-	units[targetIdx].spins = !units[targetIdx].spins;
-}
-
-function resizeReset() {
-	w = canvas.width = window.innerWidth;
-	h = canvas.height = window.innerHeight;
-
-	area.cols = Math.floor((w - area.padding * 1) / area.distance);
-	area.rows = Math.floor((h - area.padding * 1) / area.distance);
-
-	pointer = {
-		x: area.distance * (area.cols / 2) + area.padding,
-		y: area.distance * (area.rows / 2) + area.padding
-	}
-
-	units = [];
-
-	for (let i = 0; i < area.rows; i++) {
-		for (let j = 0; j < area.cols; j++) {
-			units.push(new Unit(j, i));
-		}
-	}
-}
-
-function animationLoop() {
-	ctx.clearRect(0, 0, w, h);
-	drawScene();
-	requestAnimationFrame(animationLoop);
-}
-
-function drawScene() {
-	units.map((unit) => {
-		unit.update();
-		unit.draw();
-	});
-}
-
-class Unit {
-	constructor(col, row) {
-		this.x = area.distance * (col + 0.5) + area.padding;
-		this.y = area.distance * (row + 0.5) + area.padding;
-		this.w = 18;
-		this.h = 3;
-		this.spins = false;
-	}
-	draw() {
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.rotate(this.angle);
-		ctx.scale(this.scale, this.scale);
-		ctx.fillStyle = `rgba(255, 205, 255, ${this.alpha})`;
-		ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
-		ctx.restore();
-	}
-	update() {
-		if (this.spins === false) {
-			this.angle = Math.atan2(pointer.y - this.y, pointer.x - this.x);
-			this.distance = Math.sqrt(Math.pow(this.x - pointer.x, 2) + Math.pow(this.y - pointer.y, 2));
-			this.alpha = Math.max(0.2, 1 - this.distance / (w * 0.5));
-			this.scale = Math.max(0.5, 1 - this.distance / (w * 0.5));
-		} else {
-			this.angle += 0.3;
-		}		
-	}
-}
-
-window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("resize", resizeReset);
-window.addEventListener("mousemove", mousemove);
-</script>
-
+    
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
