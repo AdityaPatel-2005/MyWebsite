@@ -88,6 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas, ctx, w, h;
     let units, pointer;
     let particleColorRGB;
+    
+    // Auto-movement variables for mobile/idle
+    let autoAngle = 0;
+    let isIdle = true;
+    let idleTimeout;
 
     // Configuration for the canvas elements
     let area = {
@@ -104,10 +109,29 @@ document.addEventListener('DOMContentLoaded', () => {
         animationLoop();
     }
 
+    // Resets the idle timer when user interacts
+    function resetIdle() {
+        isIdle = false;
+        clearTimeout(idleTimeout);
+        idleTimeout = setTimeout(() => {
+            isIdle = true;
+        }, 1500); // Wait 1.5 seconds before resuming auto-movement
+    }
+
     function mousemove(e) {
         if(pointer) {
             pointer.x = e.clientX; 
             pointer.y = e.clientY; 
+            resetIdle();
+        }
+    }
+
+    // NEW: Captures touch movement on mobile screens
+    function touchmove(e) {
+        if(pointer && e.touches.length > 0) {
+            pointer.x = e.touches[0].clientX;
+            pointer.y = e.touches[0].clientY;
+            resetIdle();
         }
     }
 
@@ -124,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         updateParticleColor(); 
+        resetIdle(); // Start the timer on load
         
         units = [];
         for (let i = 0; i < area.rows; i++) {
@@ -135,6 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animationLoop() {
         ctx.clearRect(0, 0, w, h);
+
+        // NEW: Auto-movement logic if idle or on mobile
+        if (isIdle && pointer) {
+            autoAngle += 0.005; // Controls the speed of the floating movement
+            const radius = Math.min(w, h) * 0.3; // Controls how wide the movement is
+            
+            // Creates a smooth figure-8 movement
+            pointer.x = w / 2 + Math.cos(autoAngle) * radius;
+            pointer.y = h / 2 + Math.sin(autoAngle * 0.8) * radius; 
+        }
+
         drawScene();
         requestAnimationFrame(animationLoop);
     }
@@ -184,4 +220,5 @@ document.addEventListener('DOMContentLoaded', () => {
     init(); 
     window.addEventListener("resize", resizeReset);
     window.addEventListener("mousemove", mousemove);
+    window.addEventListener("touchmove", touchmove); // Listen for mobile swipes
 });
