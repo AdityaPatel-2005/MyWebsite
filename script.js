@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mousemove(e) {
+        // NEW: If the screen is mobile-sized, completely ignore "fake" mouse events
+        if (window.innerWidth <= 768) return;
+
         if(pointer) {
             pointer.x = e.clientX; 
             pointer.y = e.clientY; 
