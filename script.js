@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // On page load, check for saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark'; 
     applyTheme(savedTheme);
 
 
@@ -92,12 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuration for the canvas elements
     let area = {
         distance: 20,
-        padding: 15 // Reduced padding for smaller margins
+        padding: 15
     };
 
     function init() {
         canvas = document.querySelector("#canvas");
-        if (!canvas) return; // Exit if canvas not found
+        if (!canvas) return; 
         ctx = canvas.getContext("2d");
 
         resizeReset();
@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mousemove(e) {
         if(pointer) {
-            pointer.x = e.clientX; // Use clientX for viewport-relative coordinates
-            pointer.y = e.clientY; // Use clientY for viewport-relative coordinates
+            pointer.x = e.clientX; 
+            pointer.y = e.clientY; 
         }
     }
 
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: h / 2
         };
         
-        updateParticleColor(); // Set initial particle color
+        updateParticleColor(); 
         
         units = [];
         for (let i = 0; i < area.rows; i++) {
@@ -148,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Function to get the current particle color from CSS variables
     window.updateParticleColor = function() {
         const computedStyle = getComputedStyle(document.body);
         particleColorRGB = computedStyle.getPropertyValue('--particle-color-rgb').trim();
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.translate(this.x, this.y);
             ctx.rotate(this.angle);
             ctx.scale(this.scale, this.scale);
-            // Use the dynamically updated color
             ctx.fillStyle = `rgba(${particleColorRGB || '255, 205, 255'}, ${this.alpha})`;
             ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
             ctx.restore();
@@ -183,9 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Event Listeners ---
-    init(); // Initialize canvas script
+    init(); 
     window.addEventListener("resize", resizeReset);
     window.addEventListener("mousemove", mousemove);
 });
-
