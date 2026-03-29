@@ -11,13 +11,6 @@
     scroll-behavior: smooth;
 }
 
-/* ============================================
-EASY COLOR CUSTOMIZATION
-============================================
-Change the color values in the :root and .light-mode selectors 
-below to easily customize the entire website's theme.
-*/
-
 :root {
     /* -- Dark Mode Colors (Default) -- */
     --bg-color: #080808;
@@ -248,43 +241,28 @@ input:checked + .slider .bxs-moon { opacity: 1; }
     margin: 2rem 0 4rem;
 }
 
+/* 3D Model Container */
 .home-img {
     position: relative;
     width: 55rem; 
     height: 55rem; 
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5rem;
 }
 
-.home-img img {
-    width: 90%;
-    border-radius: 50%;
-    border: .2rem solid var(--main-color);
-    box-shadow: 0 0 2rem var(--main-color);
+#container3D canvas {
+    width: 100% !important;
+    height: 100% !important;
+    outline: none;
+    cursor: grab;
+    /* Optional: Gives your 3D model a slight glow matching your theme */
+    filter: drop-shadow(0 0 .4rem var(--main-color));
 }
 
-.home-img .circle-spin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border-top: .2rem solid var(--second-bg-color);
-    border-bottom: .2rem solid var(--second-bg-color);
-    border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color);
-    animation: homeSpinner 8s linear infinite;
-}
-
-@keyframes homeSpinner {
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+#container3D canvas:active {
+    cursor: grabbing;
 }
 
 .home-sci {
@@ -597,4 +575,3 @@ input:checked + .slider .bxs-moon { opacity: 1; }
         height: 25rem;
     }
 }
-
