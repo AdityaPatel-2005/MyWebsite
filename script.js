@@ -79,8 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // On page load, check for saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark'; 
+    // --- NEW: Device-Specific Default Theme ---
+    // Detects if the screen is mobile-sized (768px or less)
+    const isMobile = window.innerWidth <= 768;
+    const defaultTheme = isMobile ? 'light' : 'dark';
+
+    // On page load, check for saved theme, otherwise use the device-specific default
+    const savedTheme = localStorage.getItem('theme') || defaultTheme; 
     applyTheme(savedTheme);
 
 
@@ -89,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let units, pointer;
     let particleColorRGB;
     
-    // Auto-movement variables for mobile/idle
+    // Auto-movement variables for idle/mobile
     let autoAngle = 0;
     let isIdle = true;
     let idleTimeout;
@@ -109,28 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
         animationLoop();
     }
 
-    // Resets the idle timer when user interacts
+    // Resets the idle timer when user interacts (desktop only now)
     function resetIdle() {
         isIdle = false;
         clearTimeout(idleTimeout);
         idleTimeout = setTimeout(() => {
             isIdle = true;
-        }, 1500); // Wait 1.5 seconds before resuming auto-movement
+        }, 1500); 
     }
 
     function mousemove(e) {
         if(pointer) {
             pointer.x = e.clientX; 
             pointer.y = e.clientY; 
-            resetIdle();
-        }
-    }
-
-    // NEW: Captures touch movement on mobile screens
-    function touchmove(e) {
-        if(pointer && e.touches.length > 0) {
-            pointer.x = e.touches[0].clientX;
-            pointer.y = e.touches[0].clientY;
             resetIdle();
         }
     }
@@ -148,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         updateParticleColor(); 
-        resetIdle(); // Start the timer on load
+        resetIdle(); // Starts the timer so it eventually auto-moves on mobile
         
         units = [];
         for (let i = 0; i < area.rows; i++) {
@@ -161,10 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function animationLoop() {
         ctx.clearRect(0, 0, w, h);
 
-        // NEW: Auto-movement logic if idle or on mobile
+        // Auto-movement logic if idle
         if (isIdle && pointer) {
-            autoAngle += 0.005; // Controls the speed of the floating movement
-            const radius = Math.min(w, h) * 0.3; // Controls how wide the movement is
+            autoAngle += 0.005; 
+            const radius = Math.min(w, h) * 0.3; 
             
             // Creates a smooth figure-8 movement
             pointer.x = w / 2 + Math.cos(autoAngle) * radius;
@@ -220,5 +216,5 @@ document.addEventListener('DOMContentLoaded', () => {
     init(); 
     window.addEventListener("resize", resizeReset);
     window.addEventListener("mousemove", mousemove);
-    window.addEventListener("touchmove", touchmove); // Listen for mobile swipes
+    // Removed the touchmove event listener entirely
 });
