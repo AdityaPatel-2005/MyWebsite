@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Patel | Portfolio</title>
-    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- Link to Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <!-- The canvas for the background animation -->
     <canvas id="canvas"></canvas>
     
-    <!-- Header section with navigation -->
     <header class="header">
         <a href="#home" class="logo">Aditya.</a>
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -23,30 +19,28 @@
             <a href="#journey">Journey</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <!-- Light/Dark Mode Toggle Switch -->
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="theme-switch-checkbox">
                     <input type="checkbox" id="theme-switch-checkbox" />
                     <div class="slider round">
                         <i class='bx bxs-moon'></i>
                         <i class='bx bxs-sun'></i>
-                        
                     </div>
                 </label>
             </div>
         </nav>
     </header>
 
-    <!-- Home Section -->
     <section class="home" id="home">
         <div class="home-content">
             <h1>Hi, I'm Aditya Patel</h1>
             <h3>Engineering Student</h3>
             <p>Currently pursuing my B.Tech at <strong class="highlight">Symbiosis Institute of Technology</strong>, Pune, I thrive at the intersection of practical design, performance engineering, and innovation. With hands-on experience in vehicle systems through Formula Student and real-world applications during my <strong class="highlight">internship at Suzlon</strong>, I specialize in CAD, simulations, and turning concepts into functional systems. I believe in learning by building—and collaborating to solve real problems.</p>
         </div>
-        <div class="home-img">
-            <img src="face.jpg" alt="Aditya Patel" onerror="this.onerror=null;">
-        </div>
+        
+        <div class="home-img" id="container3D">
+            </div>
+
         <div class="home-sci">
             <a href="https://www.linkedin.com/in/ap7592/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
             <a href="https://www.instagram.com/aditya_d._patel" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram' ></i></a>
@@ -54,7 +48,6 @@
         </div>
     </section>
 
-    <!-- Journey Section -->
     <section class="journey" id="journey">
         <h2 class="heading">My <span>Journey</span></h2>
         <div class="journey-row">
@@ -90,7 +83,14 @@
                     <div class="journey-content">
                         <div class="content">
                             <div class="year"><strong><i class='bx bxs-calendar'></i> Summer 2025</strong></div>
-                            <h3>Technical Internship - Suzlon Energy</h3>
+                            <h3>Internship - Suzlon Energy</h3>
+                            <p>Completed a summer internship at Suzlon Energy, Pune, gaining practical exposure to real-world engineering processes and systems.</p>
+                        </div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="content">
+                            <div class="year"><strong><i class='bx bxs-calendar'></i> Winter 2026</strong></div>
+                            <h3>Internship - Mitsubishi </h3>
                             <p>Completed a summer internship at Suzlon Energy, Pune, gaining practical exposure to real-world engineering processes and systems.</p>
                         </div>
                     </div>
@@ -99,7 +99,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Skills</span></h2>
         <div class="skills-row">
@@ -128,11 +127,9 @@
         </div>
     </section>
     
-    <!-- Projects Section -->
     <section class="projects" id="projects">
         <h2 class="heading">My <span>Projects</span></h2>
         
-        <!-- Project 1 -->
         <div class="project-card">
             <img src="project1.gif" alt="Solar Mobile Charger" onerror="this.onerror=null;">
             <div class="project-info">
@@ -141,7 +138,6 @@
             </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
             <img src="project2.gif" alt="Wireless Backlit Keyboard" onerror="this.onerror=null;">
             <div class="project-info">
@@ -150,7 +146,6 @@
             </div>
         </div>
         
-        <!-- Project 3 -->
         <div class="project-card">
             <img src="project4.gif" alt="Mini Drone" onerror="this.onerror=null;">
             <div class="project-info">
@@ -159,7 +154,6 @@
             </div>
         </div>
 
-        <!-- Project 4 -->
         <div class="project-card">
             <img src="project5.gif" alt="FSAE Rear Wing" onerror="this.onerror=null;">
             <div class="project-info">
@@ -176,7 +170,6 @@
         </div>        
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
             <p>Copyright © 2024 by Aditya Patel | All Rights Reserved.</p>
@@ -186,9 +179,17 @@
         </div>
     </footer>
     
-    <!-- Link to your external JavaScript file -->
     <script src="script.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="3d-model.js"></script>
 </body>
 </html>
-
-
