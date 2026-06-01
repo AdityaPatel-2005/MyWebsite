@@ -41,7 +41,7 @@ controls.enableZoom = false;
 const loader = new GLTFLoader();
 
 // *** CHANGE THIS NAME TO MATCH YOUR ACTUAL FILE ***
-loader.load('rabbit4.glb', function (gltf) {
+loader.load('jet_enginecool.glb', function (gltf) {
     const model = gltf.scene;
     
     // Auto-center the model
